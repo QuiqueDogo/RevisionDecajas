@@ -141,7 +141,8 @@ function guardarInfo(data) {
 
     if (confirmacion === true) {
         //desactivamos el boton
-        
+        let botonAquitar = document.querySelector('#'+ data +' button');
+        botonAquitar.setAttribute('disabled', 'true');
         //Seleccionamos todo lo que vamos a guardar
         let id = document.querySelector('#' + data).firstElementChild.firstChild.innerHTML
         let status = document.querySelector('#' + data + ' select')
@@ -170,7 +171,7 @@ function guardarInfo(data) {
 
 
 
-        fetch(ruta, PeticionGuardar).then(response => response.json().then(datos => manejador_datosGuardar(datos)).catch(error => console.log(error))).catch(error => console.log(error));
+        // fetch(ruta, PeticionGuardar).then(response => response.json().then(datos => manejador_datosGuardar(datos)).catch(error => console.log(error))).catch(error => console.log(error));
 
     }
 
