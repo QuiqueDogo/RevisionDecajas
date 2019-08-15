@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+#reactivos {
+  display: flex;
+  overflow: auto;
+  width: 90%;
+  max-height: 75vh;
+  margin-top: 50px;
+  margin: 40px auto;
+  background: white;
+
+}
+
+iframe {
+  background: white;
+}
+
+th,
+tr {
+  font-size: .9rem;
+  border: 1px 0 solid;
+}
+
+td {
+  border: 0 0 1px solid;
+}
+
+.cuestionario {
+  text-align: center;
+  border-width: 1px thin;
+  color: white;
+}
+
+.container {
+  width: 99vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between
+}
+
+/* .form{
+    width: 40%;
+    background: white;
+    color: black;
+    box-shadow: 9px 10px rgba(0,0,0,.15);
+    padding-left: 20px;
+} */
+
+.frame {
+  width: 50%;
+}
+
+
+html {
+  background:
+    linear-gradient(0deg, rgba(117, 117, 117, 0.01) 0%, rgba(117, 117, 117, 0.01) 1%, rgba(235, 235, 235, 0.01) 1%, rgba(235, 235, 235, 0.01) 6%, rgba(196, 196, 196, 0.01) 6%, rgba(196, 196, 196, 0.01) 18%, rgba(209, 209, 209, 0.01) 18%, rgba(209, 209, 209, 0.01) 53%, rgba(196, 196, 196, 0.01) 53%, rgba(196, 196, 196, 0.01) 94%, rgba(223, 223, 223, 0.01) 94%, rgba(223, 223, 223, 0.01) 100%), linear-gradient(45deg, rgba(168, 168, 168, 0.05) 0%, rgba(168, 168, 168, 0.05) 6%, rgba(124, 124, 124, 0.05) 6%, rgba(124, 124, 124, 0.05) 20%, rgba(136, 136, 136, 0.05) 20%, rgba(136, 136, 136, 0.05) 23%, rgba(217, 217, 217, 0.05) 23%, rgba(217, 217, 217, 0.05) 24%, rgba(46, 46, 46, 0.05) 24%, rgba(46, 46, 46, 0.05) 71%, rgba(155, 155, 155, 0.05) 71%, rgba(155, 155, 155, 0.05) 100%), linear-gradient(135deg, rgba(73, 73, 73, 0.08) 0%, rgba(73, 73, 73, 0.08) 20%, rgba(235, 235, 235, 0.08) 20%, rgba(235, 235, 235, 0.08) 53%, rgba(69, 69, 69, 0.08) 53%, rgba(69, 69, 69, 0.08) 61%, rgba(104, 104, 104, 0.08) 61%, rgba(104, 104, 104, 0.08) 100%), linear-gradient(0deg, rgba(9, 9, 9, 0.01) 0%, rgba(9, 9, 9, 0.01) 1%, rgba(240, 240, 240, 0.01) 1%, rgba(240, 240, 240, 0.01) 6%, rgba(235, 235, 235, 0.01) 6%, rgba(235, 235, 235, 0.01) 7%, rgba(235, 235, 235, 0.01) 7%, rgba(235, 235, 235, 0.01) 56%, rgba(32, 32, 32, 0.01) 56%, rgba(32, 32, 32, 0.01) 68%, rgba(33, 33, 33, 0.01) 68%, rgba(33, 33, 33, 0.01) 71%, rgba(190, 190, 190, 0.01) 71%, rgba(190, 190, 190, 0.01) 81%, rgba(209, 209, 209, 0.01) 81%, rgba(209, 209, 209, 0.01) 100%), linear-gradient(0deg, rgba(50, 50, 50, 0.02) 0%, rgba(50, 50, 50, 0.02) 10%, rgba(2, 2, 2, 0.02) 10%, rgba(2, 2, 2, 0.02) 14%, rgba(27, 27, 27, 0.02) 14%, rgba(27, 27, 27, 0.02) 23%, rgba(22, 22, 22, 0.02) 23%, rgba(22, 22, 22, 0.02) 25%, rgba(252, 252, 252, 0.02) 25%, rgba(252, 252, 252, 0.02) 36%, rgba(82, 82, 82, 0.02) 36%, rgba(82, 82, 82, 0.02) 61%, rgba(168, 168, 168, 0.02) 61%, rgba(168, 168, 168, 0.02) 96%, rgba(255, 255, 255, 0.02) 96%, rgba(255, 255, 255, 0.02) 100%), linear-gradient(90deg, rgb(226, 92, 33), rgb(28, 37, 18))
+}
+
+table {
+  text-align: left;
+  position: relative;
+  border-collapse: collapse; 
+}
+
+table.tablas {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+table.tablas td,
+table.tablas th {
+  border: 0px solid #AAAAAA;
+  padding: 3px 2px;
+}
+
+table.tablas tbody td {
+  font-size: 11px;
+}
+
+table.tablas tr:nth-child(even) {
+  background: #D0E4F5;
+}
+
+table.tablas thead {
+  /* background: rgba(41, 41, 41, 0.658); */
+  border-bottom: 2px solid #444444;
+}
+
+table.tablas thead th {
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #D0E4F5;
+}
+
+table.tablas thead th:first-child {
+  border-left: none;
+}
+
+table.tablas tfoot td {
+  font-size: 14px;
+}
+
+table.tablas tfoot .links {
+  text-align: right;
+}
+
+table.tablas tfoot .links a {
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: rgba(41, 41, 41, 0.658);
+}
