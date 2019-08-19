@@ -14,8 +14,7 @@ foreach ($_REQUEST as $key => $value) {
     $consulta .= "{$key} = '{$value}',";
 }
 //eliminamos la coma al final y agregamos el id y las columnas que nos pidieron 
-$consulta = substr($consulta,0,-1);
-$consulta .= " ,hora_revision = CURRENT_TIMESTAMP(), quien_reviso = '{$_SESSION['idEmpleado']}' where id = '{$id}'";
+$consulta .= " hora_revision = CURRENT_TIMESTAMP(), quien_reviso = '{$_SESSION['idEmpleado']}' where id = '{$id}'";
 
 mysql_query($consulta,$conexion_69);
 if (mysql_errno()) { 

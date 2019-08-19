@@ -1,6 +1,6 @@
 function traerData(base, estudio) {
     let ruta = "assets/php/revision.php";
-
+    console.log(estudio)
     let FormBase = new FormData();
     FormBase.append('base', base);
     FormBase.append('estudio', estudio);
@@ -16,7 +16,7 @@ function traerData(base, estudio) {
 
 
 
-    fetch(ruta, PeticionFetch).then(response => response.json().then(datos => manejador_cuestionario(datos)).catch(error => console
+    fetch(ruta, PeticionFetch).then(response => response.json().then(datos => console.log(datos)).catch(error => console
         .log(error))).catch(error => console.log(error));
 }
 // Para hacer todo en el DOM
@@ -56,7 +56,7 @@ function manejador_cuestionario(datos) {
         Cabeceras.appendChild(THs);
     });
     datos.shift();
-
+    console.log(datos);
     datos.forEach(encuestas => {
         let data_encuesta = document.createElement('tr');
         data_encuesta.id = "id" + encuestas[0];
@@ -171,13 +171,14 @@ function guardarInfo(data) {
 
 
 
-        // fetch(ruta, PeticionGuardar).then(response => response.json().then(datos => manejador_datosGuardar(datos)).catch(error => console.log(error))).catch(error => console.log(error));
+         fetch(ruta, PeticionGuardar).then(response => response.json().then(datos => manejador_datosGuardar(datos)).catch(error => console.log(error))).catch(error => console.log(error));
 
     }
 
 }
 
 function manejador_datosGuardar(datos) {
+    console.log(datos)
     if (datos == 'no se pudo ejecutar'){
         alert('Hubo un error');
     }else{

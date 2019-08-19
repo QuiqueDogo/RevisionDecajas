@@ -14,7 +14,7 @@ if ($idEmpleado == '') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
     <title>Revisión Cuestionarios</title>
     <script src="assets/js/main.js" async defer></script>
@@ -22,7 +22,7 @@ if ($idEmpleado == '') {
 
 <body>
     <input type="hidden" value="<?php echo $idEmpleado;?>">
-    <a href="./revisionBO">Revision Bo</a>
+    <a href="./revisionBO" disabled>Revision Bo</a>
     <div class="container">
         <div class="form">
             <table class="tablas">
@@ -37,7 +37,8 @@ if ($idEmpleado == '') {
                     <tr>
                         <td><?php echo $basesKantar['nombre']; ?></td>
                         <td> <button class=""
-                                onclick="traerData('<?php echo $basesKantar['base']; ?>','<?php echo $basesKantar['nombre']; ?>')">Revisar </button> </td>
+                                onclick="traerData('<?php echo $basesKantar['base']; ?>','<?php echo $basesKantar['nombre']; ?>')">Revisar
+                            </button> </td>
                     </tr>
                     <?php } ?>
                 </tbody>
@@ -45,14 +46,15 @@ if ($idEmpleado == '') {
         </div>
         <div class="frame"></div>
     </div>
+    <div class="container2" style="margin: 100px 0 0 0;">
         <div class="cuestionario"></div>
         <div id="reactivos">
             <table class="tablas">
                 <thead id="titulosColum"></thead>
                 <tbody id="datosColum"></tbody>
             </table>
+        </div>
     </div>
 </body>
 
 </html>
-
