@@ -44,9 +44,11 @@ if ($idEmpleado == '') {
                 </tbody>
             </table>
         </div>
-        <div class="frame"></div>
+            <img class="loaderbonito" src="assets/img/ahoramaschido.svg" alt="" style="margin: 0 0 0 200px; display:none;">
+        <div class="frame">
+        </div>
     </div>
-    <div class="container2" style="margin: 100px 0 0 0;">
+    <div class="container2" style="margin: 100px 0 0 0; display:'none';">
         <div class="cuestionario"></div>
         <div id="reactivos">
             <table class="tablas">

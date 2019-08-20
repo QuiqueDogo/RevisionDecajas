@@ -14,6 +14,9 @@ function traerData(base, estudio) {
         mode: 'no-cors'
     }
 
+    let loader = document.querySelector('.loaderbonito');
+    loader.className += ' cargado';
+    loader.style.display = 'block';
 
 
     fetch(ruta, PeticionFetch).then(response => response.json().then(datos => manejador_cuestionario(datos)).catch(error => console
@@ -21,6 +24,11 @@ function traerData(base, estudio) {
 }
 // Para hacer todo en el DOM
 function manejador_cuestionario(datos) {
+    let loader = document.querySelector('.loaderbonito');
+    if(loader.classList.contains('cargado')){
+        loader.style.display = 'none';
+    }
+
     // console.log(datos);
     //Cabeceras y limpia cada vez que mande a llamar una campaña.
     let Cabeceras = document.querySelector('#titulosColum')
@@ -56,7 +64,7 @@ function manejador_cuestionario(datos) {
         Cabeceras.appendChild(THs);
     });
     datos.shift();
-    
+
     datos.forEach(encuestas => {
         let data_encuesta = document.createElement('tr');
         data_encuesta.id = "id" + encuestas[0];
