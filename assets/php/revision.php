@@ -1,5 +1,5 @@
 <?php
-//falta agregar las perras condiciones de las perras preguntas, don pendejo se le olvido
+//falta agregar las perras condiciones de las perras preguntas, don pendejo se le olvido, las condiciones de los funciones  no lo traemos en la funciones
 include 'conexiones.php';
 include 'funciones.php';
 
@@ -7,6 +7,7 @@ $todo = array();
 //cabeceras de lo que voy a traer
 $pregunta = array("ID","FECHA", "TELEFONO", "AGENTE");
 $bdKantar = $_REQUEST['base'];
+$nombreKantar = $_REQUEST['estudio'];
 $estudioKantar = array($_REQUEST['estudio'],$_REQUEST['base']);
 
 //preguntas
@@ -20,17 +21,14 @@ while($preguntas = mysql_fetch_assoc($queryPreguntas)){
     array_push($pregunta,$preguntas['pregunta']);
 }
 
-
 //quitamos la ultima coma
 $consultaBDV = substr($consultaBDV, 0 ,-1);
-//agremamos lo que falta
-$consultaBDV .= " from {$bdKantar}.bdv B inner join {$bdKantar} A on B.telefono = A.TELEPHONENUMBER where ";
 
+//agremamos lo que falta y hacemos el inner join con base cliente 
+$consultaBDV .= " from {$bdKantar}.bdv B inner join {$bdKantar}.basecliente A on B.telefono = A.TELEPHONENUMBER where ";
 
-
-
-
-
+//traemos los parametros definidos para cada estudio para tomar como completadas
+$consultaBDV .= traerCondicion($nombreKantar);
 
 //agregamos las ultimas cabeceras
 array_push($pregunta,'STATUS','','Audios .8','Audios .5');
@@ -41,11 +39,11 @@ $arreglin = array();
 //Metemos el estudio a imprimir, y las cabeceras
 array_push($arreglin,$estudioKantar,$pregunta);
 
-// todo
-// while($DataKantar = mysql_fetch_row($sql)) {
-//        $arreglin[] = $DataKantar;
-//     }
+// ejecutamos la consulta en un whilw y que esto meta todo al arreglin principal
+while($DataKantar = mysql_fetch_row($sql)) {
+       $arreglin[] = $DataKantar;
+    }
     
-    // echo json_encode($arreglin,JSON_UNESCAPED_UNICODE);
-    echo json_encode($consultaBDV);
+echo json_encode($arreglin,JSON_UNESCAPED_UNICODE);
+
     ?>

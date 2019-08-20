@@ -16,7 +16,7 @@ function traerData(base, estudio) {
 
 
 
-    fetch(ruta, PeticionFetch).then(response => response.json().then(datos => console.log(datos)).catch(error => console
+    fetch(ruta, PeticionFetch).then(response => response.json().then(datos => manejador_cuestionario(datos)).catch(error => console
         .log(error))).catch(error => console.log(error));
 }
 // Para hacer todo en el DOM
@@ -56,7 +56,7 @@ function manejador_cuestionario(datos) {
         Cabeceras.appendChild(THs);
     });
     datos.shift();
-    console.log(datos);
+    
     datos.forEach(encuestas => {
         let data_encuesta = document.createElement('tr');
         data_encuesta.id = "id" + encuestas[0];
@@ -72,8 +72,8 @@ function manejador_cuestionario(datos) {
             let TDdata = document.createElement('td');
             let cajatexto = document.createElement('textarea');
             cajatexto.value = encuestas[n];
-            cajatexto.setAttribute('cols','50');
-            cajatexto.setAttribute('rows','10')
+            cajatexto.setAttribute('cols', '50');
+            cajatexto.setAttribute('rows', '10');
             cajatexto.id = titulos[n];
 
             TDdata.appendChild(cajatexto);
@@ -115,7 +115,7 @@ function manejador_cuestionario(datos) {
         //Agregamos la liga del 8 --- Primero hay que hacer un botony de ahi tomar el numero y mandarlo como parametro en una nueva funcion
         let tdaudio8 = document.createElement('td');
         let boton8 = document.createElement('button');
-        boton8.setAttribute('onclick','creacionIframe8y5("'+ encuestas[2] +'","8")');
+        boton8.setAttribute('onclick', 'creacionIframe8y5("' + encuestas[2] + '","8")');
         boton8.innerHTML = "Audio .8";
         tdaudio8.appendChild(boton8);
         data_encuesta.appendChild(tdaudio8);
@@ -123,7 +123,7 @@ function manejador_cuestionario(datos) {
         //Agregamos la liga para buscar del 5
         let tdaudio5 = document.createElement('td');
         let boton5 = document.createElement('button');
-        boton5.setAttribute('onclick','creacionIframe8y5("'+ encuestas[2] +'","5")');
+        boton5.setAttribute('onclick', 'creacionIframe8y5("' + encuestas[2] + '","5")');
         boton5.innerHTML = "Audio .5";
         tdaudio5.appendChild(boton5);
         data_encuesta.appendChild(tdaudio5);
@@ -141,7 +141,7 @@ function guardarInfo(data) {
 
     if (confirmacion === true) {
         //desactivamos el boton
-        let botonAquitar = document.querySelector('#'+ data +' button');
+        let botonAquitar = document.querySelector('#' + data + ' button');
         botonAquitar.setAttribute('disabled', 'true');
         //Seleccionamos todo lo que vamos a guardar
         let id = document.querySelector('#' + data).firstElementChild.firstChild.innerHTML
@@ -171,7 +171,7 @@ function guardarInfo(data) {
 
 
 
-         fetch(ruta, PeticionGuardar).then(response => response.json().then(datos => manejador_datosGuardar(datos)).catch(error => console.log(error))).catch(error => console.log(error));
+        fetch(ruta, PeticionGuardar).then(response => response.json().then(datos => manejador_datosGuardar(datos)).catch(error => console.log(error))).catch(error => console.log(error));
 
     }
 
@@ -179,9 +179,9 @@ function guardarInfo(data) {
 
 function manejador_datosGuardar(datos) {
     console.log(datos)
-    if (datos == 'no se pudo ejecutar'){
+    if (datos == 'no se pudo ejecutar') {
         alert('Hubo un error');
-    }else{
+    } else {
         alert('Guardado');
     }
 }
@@ -194,14 +194,14 @@ function creacionIframe8y5(telefono, servidor) {
     }
     let iframe8 = document.createElement('iframe');
 
-    if(servidor == 8){
-        iframe8.setAttribute('src','http://172.30.27.8/buscar_audios/?txt_telefono='+ telefono +'&btn_marcar=buscar');
-    }else{
-        iframe8.setAttribute('src','http://172.30.27.5/buscar_audios/?txt_telefono='+ telefono +'&btn_marcar=buscar');
+    if (servidor == 8) {
+        iframe8.setAttribute('src', 'http://172.30.27.8/buscar_audios/?txt_telefono=' + telefono + '&btn_marcar=buscar');
+    } else {
+        iframe8.setAttribute('src', 'http://172.30.27.5/buscar_audios/?txt_telefono=' + telefono + '&btn_marcar=buscar');
     }
 
-    iframe8.setAttribute('width','90%');
-    iframe8.setAttribute('height','90%');
+    iframe8.setAttribute('width', '90%');
+    iframe8.setAttribute('height', '90%');
     iframeContenedor.appendChild(iframe8);
 
 }
