@@ -1,4 +1,10 @@
 function traerData(base, estudio) {
+    //para el contenedor de los iframe
+    let iframeContenedor = document.querySelector('.frame');
+    //limpiamos cada ves que se llame
+    while (iframeContenedor.firstChild) {
+        iframeContenedor.removeChild(iframeContenedor.firstChild);
+    }
     let ruta = "assets/php/revision.php";
     console.log(estudio)
     let FormBase = new FormData();
@@ -24,8 +30,9 @@ function traerData(base, estudio) {
 }
 // Para hacer todo en el DOM
 function manejador_cuestionario(datos) {
+    //para el gif
     let loader = document.querySelector('.loaderbonito');
-    if(loader.classList.contains('cargado')){
+    if (loader.classList.contains('cargado')) {
         loader.style.display = 'none';
     }
 

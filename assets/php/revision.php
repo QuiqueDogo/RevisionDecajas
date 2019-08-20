@@ -29,6 +29,8 @@ $consultaBDV .= " from {$bdKantar}.bdv B inner join {$bdKantar}.basecliente A on
 
 //traemos los parametros definidos para cada estudio para tomar como completadas
 $consultaBDV .= traerCondicion($nombreKantar);
+//nada mas agregamos las ultima condicion para poder manejar por los status que querian
+$consultaBDV .= " and statusRevision is null order by rand() limit 20";
 
 //agregamos las ultimas cabeceras
 array_push($pregunta,'STATUS','','Audios .8','Audios .5');
