@@ -1,5 +1,5 @@
 <?php
-//falta agregar las perras condiciones de las perras preguntas, don pendejo se le olvido, las condiciones de los funciones  no lo traemos en la funciones
+//falta agregar las perras condiciones de las perras preguntas, don pendejo se le olvido, las condiciones de los funciones  nos lo traemos en la funciones.php
 include 'conexiones.php';
 include 'funciones.php';
 
